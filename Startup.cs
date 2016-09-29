@@ -20,9 +20,7 @@ namespace TheWorld
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
-        {
-            //Add middleware required to show static files to browser
-            app.UseDefaultFiles();
+        {   
             app.UseStaticFiles();
             
         }
