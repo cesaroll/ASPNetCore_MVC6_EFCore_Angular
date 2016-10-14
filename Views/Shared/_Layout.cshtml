@@ -2,7 +2,12 @@
 <html>
 <head>
     <title>The World - @ViewBag.Title</title>
+    <meta charset="utf-8"/>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+
 </head>
 <body>
     <div id="sidebar">
@@ -16,19 +21,24 @@
     </div>
     <div id="wrapper">
         <div id="main">
+
             <div>
-                <button id="sidebarToggle">Toggle Menu</button>
+                <button id="sidebarToggle" class="btn btn-primary btn-sm">
+                    <i class="fa fa-angle-left"></i>
+                </button>
             </div>
            
             @RenderBody()
 
         </div>
         <div id="footer">
-            &copy; 2015 The World Ltd.
+            <p class="text-primary">&copy; 2015 The World Ltd.</p>
         </div>
     </div>
     <script type="text/javascript" src="~/lib/jquery/dist/jquery.min.js"></script>
-    @RenderSection("scripts", false)
+    <script type="text/javascript" src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="~/js/site.js"></script>
+
+    @RenderSection("scripts", false)
 </body>
 </html>
