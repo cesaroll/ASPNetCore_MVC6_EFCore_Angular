@@ -3,6 +3,6 @@
     "ToAddress": "cesar@pluralsight.com"
   },
   "Data": {
-    "WorldConnectionString": "Server=localhost\MSSQLSERVER;Database=TheWorld;Trusted_Connection=true;MultipleActiveResultSets=true;"
+    "WorldConnectionString": "Data Source=localhost;Initial Catalog=TheWorld;Integrated Security=True;MultipleActiveResultSets=true;"
   }
 }
