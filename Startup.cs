@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using TheWorld.Services;
 using Microsoft.Extensions.Configuration;
+using TheWorld.Models;
 
 namespace TheWorld
 {
@@ -41,6 +42,7 @@ namespace TheWorld
                 services.AddScoped<IMailService, DebugMailService>();
             }
 
+            services.AddDbContext<WorldContext>();
             services.AddMvc();
         }
 
