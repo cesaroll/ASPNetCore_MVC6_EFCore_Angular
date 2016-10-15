@@ -1,5 +1,8 @@
 {
   "MailSettings": {
     "ToAddress": "cesar@pluralsight.com"
+  },
+  "Data": {
+    "WorldConnectionString": "Server=localhost\MSSQLSERVER;Database=TheWorld;Trusted_Connection=true;MultipleActiveResultSets=true;"
   }
 }
