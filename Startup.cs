@@ -48,6 +48,8 @@ namespace TheWorld
 
             services.AddTransient<WorldContextSeedData>();
 
+            services.AddLogging();
+
             services.AddMvc();
         }
 
@@ -60,7 +62,13 @@ namespace TheWorld
             if (env.IsEnvironment("Development"))
             {
                 app.UseDeveloperExceptionPage();
+                loggerFactory.AddDebug(LogLevel.Information);
             }
+            else
+            {
+                loggerFactory.AddDebug(LogLevel.Error);
+            }
+
 
             app.UseStaticFiles();
 
