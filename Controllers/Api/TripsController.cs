@@ -40,7 +40,7 @@ namespace TheWorld.Controllers.Api
         }
 
         [HttpPost]
-        public async Task<ActionResult> Post([FromBody] TripViewModel theTrip)
+        public async Task<IActionResult> Post([FromBody] TripViewModel theTrip)
         {
             if(ModelState.IsValid)
             {
