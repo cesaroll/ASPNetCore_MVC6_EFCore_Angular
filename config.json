@@ -4,5 +4,8 @@
   },
   "Data": {
     "WorldConnectionString": "Data Source=localhost;Initial Catalog=TheWorld;Integrated Security=True;MultipleActiveResultSets=true;"
+  },
+  "Keys": {
+    "BingKey": "DONTEVERPUTKEYSINSOURCECONTROL_EnvVar:Keys_BingKey"
   }
 }
