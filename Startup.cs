@@ -14,6 +14,7 @@ using Newtonsoft.Json.Serialization;
 using AutoMapper;
 using TheWorld.ViewModels;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
 
 namespace TheWorld
 {
@@ -64,11 +65,17 @@ namespace TheWorld
 
             services.AddLogging();
 
-            services.AddMvc()
-                .AddJsonOptions(config =>
+            services.AddMvc(config =>
+            {
+                if (_env.IsProduction())
                 {
-                    config.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
-                });
+                    config.Filters.Add(new RequireHttpsAttribute());
+                }
+            })
+            .AddJsonOptions(config =>
+            {
+                config.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
