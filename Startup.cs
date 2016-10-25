@@ -13,6 +13,7 @@ using TheWorld.Models;
 using Newtonsoft.Json.Serialization;
 using AutoMapper;
 using TheWorld.ViewModels;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace TheWorld
 {
@@ -53,6 +54,14 @@ namespace TheWorld
 
             services.AddTransient<WorldContextSeedData>();
 
+            services.AddIdentity<WorldUser, IdentityRole>(config =>
+            {
+                config.User.RequireUniqueEmail = true;
+                config.Password.RequiredLength = 8;
+                config.Cookies.ApplicationCookie.LoginPath = "/Auth/Login"; //Send to here if not authenticated
+            })
+            .AddEntityFrameworkStores<WorldContext>();
+
             services.AddLogging();
 
             services.AddMvc()
@@ -68,6 +77,11 @@ namespace TheWorld
             WorldContextSeedData seeder,
             ILoggerFactory loggerFactory)
         {
+
+            app.UseStaticFiles();
+
+            app.UseIdentity();
+
             Mapper.Initialize(config =>
             {
                 config.CreateMap<TripViewModel, Trip>().ReverseMap();
@@ -84,9 +98,7 @@ namespace TheWorld
                 loggerFactory.AddDebug(LogLevel.Error);
             }
 
-
-            app.UseStaticFiles();
-
+            
             app.UseMvc(config => {
                 config.MapRoute(
                     name: "Default",
