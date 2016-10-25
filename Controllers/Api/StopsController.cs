@@ -78,7 +78,7 @@ namespace TheWorld.Controllers.Api
             }
             catch(Exception ex)
             {
-                _logger.LogError("Failed to save new Stop: {0}, ex");
+                _logger.LogError("Failed to save new Stop: {0}", ex);
             }
 
             return BadRequest("Failed to save new stop");
