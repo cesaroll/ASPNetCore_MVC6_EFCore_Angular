@@ -30,7 +30,7 @@ namespace TheWorld.Controllers.Api
         {
             try
             {
-                var results = _repository.GetAllTrips();
+                var results = _repository.GetTripsByUsername(this.User.Identity.Name);
 
                 return Ok(Mapper.Map<IEnumerable<TripViewModel>>(results));
             }
@@ -48,6 +48,9 @@ namespace TheWorld.Controllers.Api
             {
                 // Save to the Database
                 var newTrip = Mapper.Map<Trip>(theTrip);
+
+                newTrip.UserName = this.User.Identity.Name;
+
                 _repository.AddTrip(newTrip);
 
                 if(await _repository.SaveChangesAsync())
