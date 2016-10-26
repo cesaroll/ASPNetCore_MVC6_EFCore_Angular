@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -13,6 +14,7 @@ using TheWorld.ViewModels;
 namespace TheWorld.Controllers.Api
 {
     [Route("/api/trips/{tripName}/stops")]
+    [Authorize]
     public class StopsController : Controller
     {
         private GeoCoordsService _coordService;
@@ -31,7 +33,7 @@ namespace TheWorld.Controllers.Api
         {
             try
             {
-                var trip = _repository.GetTripByName(tripName);
+                var trip = _repository.GetUserTripByName(tripName, this.User.Identity.Name);
                 var stops = trip.Stops.OrderBy(s => s.Order).ToList();
 
                 return Ok(Mapper.Map<IEnumerable<StopViewModel>>(stops) );
@@ -66,7 +68,7 @@ namespace TheWorld.Controllers.Api
                     }
 
                     //Save to the Database
-                    _repository.AddStop(tripName, newStop);
+                    _repository.AddStop(tripName, newStop, this.User.Identity.Name);
 
                     if(await _repository.SaveChangesAsync())
                     {
