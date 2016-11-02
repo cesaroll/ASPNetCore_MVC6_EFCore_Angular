@@ -2,40 +2,16 @@
 <ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ArrayOfArrayOfString>
     <ArrayOfString>
-      <string>C:\Users\lopezce\Documents\Workspaces\DotNetCore\TheWorld\Views\App\Contact.cshtml</string>
+      <string>C:\Users\lopezce\Documents\Workspaces\DotNetCore\TheWorld\Views\App\Trips.cshtml</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>c:\users\lopezce\documents\workspaces\dotnetcore\theworld\views\shared\_layout.cshtml</string>
+      <string>C:\Users\lopezce\Documents\Workspaces\DotNetCore\TheWorld\wwwroot\js\app-trips.js</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>c:\users\lopezce\documents\workspaces\dotnetcore\theworld\bower.json</string>
+      <string>C:\Users\lopezce\Documents\Workspaces\DotNetCore\TheWorld\wwwroot\js\tripsController.js</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>c:\users\lopezce\documents\workspaces\dotnetcore\theworld\models\iworldrepository.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>c:\users\lopezce\documents\workspaces\dotnetcore\theworld\models\worldcontext.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>c:\users\lopezce\documents\workspaces\dotnetcore\theworld\models\worldcontextseeddata.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>c:\users\lopezce\documents\workspaces\dotnetcore\theworld\models\worldrepository.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>c:\users\lopezce\documents\workspaces\dotnetcore\theworld\startup.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>c:\users\lopezce\documents\workspaces\dotnetcore\theworld\project.json</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>c:\users\lopezce\documents\workspaces\dotnetcore\theworld\viewmodels\tripviewmodel.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>c:\users\lopezce\documents\workspaces\dotnetcore\theworld\models\trip.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>c:\users\lopezce\documents\workspaces\dotnetcore\theworld\controllers\api\tripscontroller.cs</string>
+      <string>C:\Users\lopezce\Documents\Workspaces\DotNetCore\TheWorld\wwwroot\js\site.js</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>

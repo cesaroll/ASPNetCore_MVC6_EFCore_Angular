@@ -11,7 +11,13 @@
 
         var vm = this;
 
-        vm.name = "Cesar";
+        vm.trips = [{
+            name: "US Trip",
+            created: new Date()
+        }, {
+            name: "World trip",
+            created: new Date()
+        }];
 
 
     }
