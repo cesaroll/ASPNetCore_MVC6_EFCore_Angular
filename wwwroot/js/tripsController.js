@@ -19,7 +19,11 @@
             created: new Date()
         }];
 
+        vm.newTRip = {};
 
+        vm.addTrip = function () {
+            alert(vm.newTrip.name);
+        }
     }
 
 })();
