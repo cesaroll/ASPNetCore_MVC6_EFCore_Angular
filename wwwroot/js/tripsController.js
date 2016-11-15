@@ -51,8 +51,8 @@
                 })
         }
 
-        vm.manageTrip = function () {
-        	$location.path("/editor");
+        vm.manageTrip = function (tripName) {
+        	$location.path("/editor/" + tripName);
         }
 
     };
