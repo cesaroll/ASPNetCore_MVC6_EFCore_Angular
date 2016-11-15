@@ -6,14 +6,27 @@
     angular.module("app-trips", ["ngRoute", "simpleControlls"])
         .config(function ($routeProvider) {
 
-            $routeProvider.when("/", {
+        	$routeProvider
+
+						.when("/", {
                 controller: "tripsController",
                 controllerAs: "vm",
                 templateUrl: "/views/tripsView.html"
-            });
+            })
 
+            .when("/editor", {
+            	controller: "tripEditorController",
+            	controllerAs: "vm",
+            	templateUrl: "/views/tripEditorView.html"
+            });
+					            
             $routeProvider.otherwise({redirectTo: "/"}); //Any other not provided route would be redirect to first main route
 
         });
+
+    $locationProvider.html5Mode({
+    	enabled: true,
+    	requireBase: false
+    });
 
 })();

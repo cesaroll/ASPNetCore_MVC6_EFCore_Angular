@@ -7,10 +7,10 @@
     angular.module("app-trips")
         .controller("tripsController", tripsController);
 
-    function tripsController($http) {
+    function tripsController($http, $location) {
 
-        var vm = this;
-
+    	var vm = this;
+    	
         vm.trips = [];
 
         vm.newTrip = {};
@@ -50,6 +50,11 @@
                     vm.isBusy = false;
                 })
         }
+
+        vm.manageTrip = function () {
+        	$location.path("/editor");
+        }
+
     };
 
 
