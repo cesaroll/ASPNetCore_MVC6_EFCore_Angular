@@ -12,7 +12,7 @@
 				<th>Location</th>
 				<th>Arrival</th>
 			</tr>
-			<tr bg-repeat="stop in vm.stops">
+			<tr ng-repeat="stop in vm.stops">
 				<td>{{ stop.name }}</td>
 				<td>{{ stop.arrival | date:shortDate}}</td>
 			</tr>
